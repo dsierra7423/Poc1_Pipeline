@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ecrpublic","Source":"registry.terraform.io/cloudposse/ecr-public/aws","Version":"0.1.2","Dir":".terraform/modules/ecrpublic"},{"Key":"ecrpublic.this","Source":"registry.terraform.io/cloudposse/label/null","Version":"0.25.0","Dir":".terraform/modules/ecrpublic.this"}]}

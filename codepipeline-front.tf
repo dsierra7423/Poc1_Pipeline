@@ -1,6 +1,6 @@
 
 resource "aws_codepipeline" "ecr_images" {
-  name     = "pipeline-front"
+  name     = "pipeline-front-2"
   role_arn = aws_iam_role.ecr_images.arn
 
   artifact_store {
@@ -56,7 +56,7 @@ resource "aws_codepipeline" "ecr_images" {
           {
             name  = "IMAGE_REPO_NAME"
             type  = "PLAINTEXT"
-            value = aws_ecr_repository.user-front.name
+            value = aws_ecrpublic_repository.user-front.repository_name
           },
           {
             name  = "IMAGE_TAG"

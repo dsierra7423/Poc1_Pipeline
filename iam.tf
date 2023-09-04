@@ -51,8 +51,6 @@ resource "aws_iam_role_policy" "policy" {
         "s3:*"
       ],
       "Resource": [
-        "${aws_s3_bucket.state_bucket.arn}",
-        "${aws_s3_bucket.state_bucket.arn}/*",
         "${aws_s3_bucket.deploy_logs.arn}",
         "${aws_s3_bucket.deploy_logs.arn}/*"
       ]

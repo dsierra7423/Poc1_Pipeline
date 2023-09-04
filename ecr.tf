@@ -1,13 +1,23 @@
-data "aws_caller_identity" "current" {}
-data "aws_ecr_authorization_token" "container_registry_token" {}
 
-resource "aws_ecr_repository" "user-front" {
-    name = "user-front"
-    force_delete = true
+
+resource "aws_ecrpublic_repository" "user-front" {
+  repository_name = "user-front-v1"
+
+  catalog_data {
+    about_text        = "About Text"
+    architectures     = ["X64"]
+    description       = "Description"
+    operating_systems = ["Linux"]
+    usage_text        = "Usage Text"
+  }
+
+  tags = {
+    env = "production"
+  }
 }
 
 resource "aws_ecr_repository_policy" "user-front" {
-  repository = aws_ecr_repository.user-front.name
+  repository = aws_ecrpublic_repository.user-front.repository_name
   policy = <<EOF
   {
     "Version": "2012-10-17",
